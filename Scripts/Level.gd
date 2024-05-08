@@ -14,7 +14,7 @@ func _process(_delta: float)-> void:
 	elif Input.is_action_just_pressed("Reset"):
 		get_tree().reload_current_scene()
 
-func _on_deathzone_body_entered(body: Node2D)-> void:
+func _on_deathzone_body_entered(_body: Node2D)-> void:
 	resetPlayer()
 
 func _on_trap_touched_player()-> void:
