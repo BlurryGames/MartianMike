@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://deqtarbc0eqxp"]
+[gd_scene load_steps=9 format=3 uid="uid://deqtarbc0eqxp"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_bkiv2"]
 [ext_resource type="PackedScene" uid="uid://d3b17tlsdh8l7" path="res://Scenes/player.tscn" id="2_lokik"]
-[ext_resource type="PackedScene" uid="uid://ddy30tlfayt3b" path="res://Scenes/level.tscn" id="2_rkvi7"]
 [ext_resource type="PackedScene" uid="uid://cddecsyahd6qh" path="res://Scenes/tile_map.tscn" id="3_p8fis"]
 [ext_resource type="PackedScene" uid="uid://csj61rihj8kvk" path="res://Scenes/bg.tscn" id="4_sdrh4"]
 [ext_resource type="Texture2D" uid="uid://i6n5ccmt264s" path="res://Assets/textures/bg/Brown.png" id="5_2us80"]
@@ -12,7 +11,6 @@
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_bkiv2")
-nextLevel = ExtResource("2_rkvi7")
 
 [node name="TileMap" parent="." instance=ExtResource("3_p8fis")]
 
