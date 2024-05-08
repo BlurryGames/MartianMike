@@ -3,6 +3,9 @@ class_name Level extends Node2D
 @onready var startPosition: Marker2D = $StartPosition
 @onready var player: Player = $Player
 
+func _ready()-> void:
+	var traps: Array[Node] = get_tree().get_nodes_in_group("Traps")
+
 func _process(_delta: float)-> void:
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
