@@ -14,3 +14,4 @@ res://Scenes/start.tscn
 res://Scripts/Start.gd
 res://Scenes/exit.tscn
 res://Scripts/Exit.gd
+res://Scenes/level_2.tscn

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddy30tlfayt3b"]
+[gd_scene load_steps=14 format=3 uid="uid://ddy30tlfayt3b"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lrdpd"]
 [ext_resource type="PackedScene" uid="uid://csj61rihj8kvk" path="res://Scenes/bg.tscn" id="2_n5mm5"]
+[ext_resource type="PackedScene" uid="uid://burlpctoiucgs" path="res://Scenes/level_2.tscn" id="2_sveck"]
 [ext_resource type="PackedScene" uid="uid://d3b17tlsdh8l7" path="res://Scenes/player.tscn" id="2_y6yk7"]
 [ext_resource type="Texture2D" uid="uid://cbxutekrhoiet" path="res://icon.svg" id="3_hx51v"]
 [ext_resource type="PackedScene" uid="uid://dmxiqe7sl24g6" path="res://Scenes/jump_pad.tscn" id="4_q0dc7"]
@@ -15,10 +16,11 @@
 size = Vector2(116, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb7x6"]
-size = Vector2(1266, 20)
+size = Vector2(2760, 20)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_lrdpd")
+nextLevel = ExtResource("2_sveck")
 
 [node name="Bg" parent="." instance=ExtResource("2_n5mm5")]
 
