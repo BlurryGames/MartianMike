@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddy30tlfayt3b"]
+[gd_scene load_steps=12 format=3 uid="uid://ddy30tlfayt3b"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lrdpd"]
 [ext_resource type="PackedScene" uid="uid://csj61rihj8kvk" path="res://Scenes/bg.tscn" id="2_n5mm5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b85bqn5ia052i" path="res://Scenes/saw.tscn" id="5_5tpyc"]
 [ext_resource type="PackedScene" uid="uid://dgqehoujmjbg4" path="res://Scenes/spike_ball.tscn" id="6_y42n1"]
 [ext_resource type="PackedScene" uid="uid://cddecsyahd6qh" path="res://Scenes/tile_map.tscn" id="7_cbyty"]
+[ext_resource type="PackedScene" uid="uid://c567srdogw7yh" path="res://Scenes/start.tscn" id="9_ihkmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m35yq"]
 size = Vector2(116, 20)
@@ -42,9 +43,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
 shape = SubResource("RectangleShape2D_wb7x6")
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(244, 185)
-
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_q0dc7")]
@@ -66,5 +64,8 @@ position = Vector2(35, 151)
 position = Vector2(411, 200)
 
 [node name="TileMap" parent="." instance=ExtResource("7_cbyty")]
+
+[node name="Start" parent="." instance=ExtResource("9_ihkmf")]
+position = Vector2(249, 224)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]

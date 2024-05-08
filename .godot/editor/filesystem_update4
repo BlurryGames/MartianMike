@@ -10,3 +10,5 @@ res://Scenes/spike_ball.tscn
 res://Scenes/tile_map.tscn
 res://Scenes/bg.tscn
 res://Scripts/BG.gd
+res://Scenes/start.tscn
+res://Scripts/Start.gd

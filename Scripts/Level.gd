@@ -1,9 +1,13 @@
 class_name Level extends Node2D
 
-@onready var startPosition: Marker2D = $StartPosition
-@onready var player: Player = $Player
+@onready var start: Start = $Start
+@onready var player: Player = null
 
 func _ready()-> void:
+	player = get_tree().get_first_node_in_group("Player")
+	if player:
+		player.global_position = start.getSpawnPosition()
+	
 	var traps: Array[Node] = get_tree().get_nodes_in_group("Traps")
 	for t: Trap in traps:
 		t.touchedPlayer.connect(_on_trap_touched_player)
@@ -22,4 +26,4 @@ func _on_trap_touched_player()-> void:
 
 func resetPlayer()-> void:
 	player.velocity = Vector2.ZERO
-	player.global_position = startPosition.global_position
+	player.global_position = start.getSpawnPosition()
