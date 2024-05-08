@@ -5,6 +5,8 @@ class_name Level extends Node2D
 
 func _ready()-> void:
 	var traps: Array[Node] = get_tree().get_nodes_in_group("Traps")
+	for t: Trap in traps:
+		t.touchedPlayer.connect(_on_trap_touched_player)
 
 func _process(_delta: float)-> void:
 	if Input.is_action_just_pressed("Quit"):

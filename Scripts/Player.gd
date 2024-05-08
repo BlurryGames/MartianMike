@@ -6,12 +6,6 @@ class_name Player extends CharacterBody2D
 @export var speed: float = 125.0
 @export var jumpForce: float = 200.0
 
-func _ready()-> void:
-	var a: bool = true
-	var b: bool = false
-	var result: bool = !a || b
-	print(result)
-
 func _physics_process(delta: float)-> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
