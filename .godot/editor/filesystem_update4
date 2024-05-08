@@ -22,3 +22,5 @@ res://Scripts/HUD.gd
 res://Scenes/win_screen.tscn
 res://Scripts/WinScreen.gd
 res://Scripts/UILayer.gd
+res://Scenes/start_menu.tscn
+res://Scripts/StartMenu.gd
