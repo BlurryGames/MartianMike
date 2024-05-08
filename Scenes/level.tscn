@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddy30tlfayt3b"]
+[gd_scene load_steps=13 format=3 uid="uid://ddy30tlfayt3b"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lrdpd"]
 [ext_resource type="PackedScene" uid="uid://csj61rihj8kvk" path="res://Scenes/bg.tscn" id="2_n5mm5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dgqehoujmjbg4" path="res://Scenes/spike_ball.tscn" id="6_y42n1"]
 [ext_resource type="PackedScene" uid="uid://cddecsyahd6qh" path="res://Scenes/tile_map.tscn" id="7_cbyty"]
 [ext_resource type="PackedScene" uid="uid://c567srdogw7yh" path="res://Scenes/start.tscn" id="9_ihkmf"]
+[ext_resource type="PackedScene" uid="uid://deju21t67qvm4" path="res://Scenes/exit.tscn" id="10_oaocy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m35yq"]
 size = Vector2(116, 20)
@@ -20,9 +21,6 @@ size = Vector2(1266, 20)
 script = ExtResource("1_lrdpd")
 
 [node name="Bg" parent="." instance=ExtResource("2_n5mm5")]
-
-[node name="Player" parent="." instance=ExtResource("2_y6yk7")]
-position = Vector2(235, 126)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(239, 244)
@@ -67,5 +65,11 @@ position = Vector2(411, 200)
 
 [node name="Start" parent="." instance=ExtResource("9_ihkmf")]
 position = Vector2(249, 224)
+
+[node name="Exit" parent="." instance=ExtResource("10_oaocy")]
+position = Vector2(312, 160)
+
+[node name="Player" parent="." instance=ExtResource("2_y6yk7")]
+position = Vector2(235, 126)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]

@@ -12,3 +12,5 @@ res://Scenes/bg.tscn
 res://Scripts/BG.gd
 res://Scenes/start.tscn
 res://Scripts/Start.gd
+res://Scenes/exit.tscn
+res://Scripts/Exit.gd
