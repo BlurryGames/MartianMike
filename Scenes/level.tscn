@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddy30tlfayt3b"]
+[gd_scene load_steps=7 format=3 uid="uid://ddy30tlfayt3b"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lrdpd"]
 [ext_resource type="PackedScene" uid="uid://d3b17tlsdh8l7" path="res://Scenes/player.tscn" id="2_y6yk7"]
 [ext_resource type="Texture2D" uid="uid://cbxutekrhoiet" path="res://icon.svg" id="3_hx51v"]
+[ext_resource type="PackedScene" uid="uid://dmxiqe7sl24g6" path="res://Scenes/jump_pad.tscn" id="4_q0dc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m35yq"]
 size = Vector2(116, 20)
@@ -37,5 +38,12 @@ shape = SubResource("RectangleShape2D_wb7x6")
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(244, 185)
+
+[node name="JumpPad" parent="." instance=ExtResource("4_q0dc7")]
+position = Vector2(238, 234)
+
+[node name="JumpPad2" parent="." instance=ExtResource("4_q0dc7")]
+position = Vector2(201, 234)
+jumpForce = 350.0
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
