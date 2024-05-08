@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://deqtarbc0eqxp"]
+[gd_scene load_steps=10 format=3 uid="uid://deqtarbc0eqxp"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_bkiv2"]
 [ext_resource type="PackedScene" uid="uid://d3b17tlsdh8l7" path="res://Scenes/player.tscn" id="2_lokik"]
 [ext_resource type="PackedScene" uid="uid://cddecsyahd6qh" path="res://Scenes/tile_map.tscn" id="3_p8fis"]
 [ext_resource type="PackedScene" uid="uid://csj61rihj8kvk" path="res://Scenes/bg.tscn" id="4_sdrh4"]
+[ext_resource type="PackedScene" uid="uid://0l2lsul4owrf" path="res://Scenes/ui_layer.tscn" id="5_1q0dt"]
 [ext_resource type="Texture2D" uid="uid://i6n5ccmt264s" path="res://Assets/textures/bg/Brown.png" id="5_2us80"]
 [ext_resource type="PackedScene" uid="uid://deju21t67qvm4" path="res://Scenes/exit.tscn" id="5_jnhg0"]
 [ext_resource type="PackedScene" uid="uid://c567srdogw7yh" path="res://Scenes/start.tscn" id="6_01e5w"]
@@ -13,6 +14,8 @@
 script = ExtResource("1_bkiv2")
 
 [node name="TileMap" parent="." instance=ExtResource("3_p8fis")]
+
+[node name="UILayer" parent="." instance=ExtResource("5_1q0dt")]
 
 [node name="Bg" parent="." instance=ExtResource("4_sdrh4")]
 bgTexture = ExtResource("5_2us80")

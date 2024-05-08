@@ -1,3 +1,6 @@
+Label
+Control
+CanvasLayer
 CollisionShape2D
 StaticBody2D
 AnimatedSprite2D
@@ -10,4 +13,3 @@ TileMap
 AnimationPlayer
 Node2D
 Camera2D
-CharacterBody2D

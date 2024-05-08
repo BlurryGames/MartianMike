@@ -16,3 +16,6 @@ res://Scenes/exit.tscn
 res://Scripts/Exit.gd
 res://Scenes/level_2.tscn
 res://Scenes/level_3.tscn
+res://Scenes/ui_layer.tscn
+res://Scenes/hud.tscn
+res://Scripts/HUD.gd

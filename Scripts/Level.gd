@@ -2,6 +2,7 @@ class_name Level extends Node2D
 
 @onready var start: Start = $Start
 @onready var exit: Exit = $Exit
+@onready var hud: HUD = $UILayer/HUD
 @onready var deathzone: Area2D = $Deathzone
 
 @export var nextLevel: PackedScene = null
@@ -25,6 +26,7 @@ func _ready()-> void:
 	deathzone.body_entered.connect(_on_deathzone_body_entered)
 	
 	timeLeft = levelTime
+	hud.setTimeLabel(timeLeft)
 	
 	timerNode = Timer.new()
 	timerNode.name = "LevelTimer"
@@ -59,6 +61,7 @@ func _on_level_timer_timeout()-> void:
 		if timeLeft < 0.0:
 			resetPlayer()
 			timeLeft = levelTime
+		hud.setTimeLabel(timeLeft)
 
 func resetPlayer()-> void:
 	player.velocity = Vector2.ZERO
