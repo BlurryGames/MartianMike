@@ -1,4 +1,6 @@
+Button
 Label
+ColorRect
 Control
 CanvasLayer
 CollisionShape2D
@@ -11,5 +13,3 @@ ParallaxLayer
 ParallaxBackground
 TileMap
 AnimationPlayer
-Node2D
-Camera2D

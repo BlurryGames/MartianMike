@@ -12,6 +12,7 @@
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_bkiv2")
+isFinalLevel = true
 
 [node name="TileMap" parent="." instance=ExtResource("3_p8fis")]
 

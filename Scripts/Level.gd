@@ -3,10 +3,12 @@ class_name Level extends Node2D
 @onready var start: Start = $Start
 @onready var exit: Exit = $Exit
 @onready var hud: HUD = $UILayer/HUD
+@onready var uiLayer: UILayer = $UILayer
 @onready var deathzone: Area2D = $Deathzone
 
 @export var nextLevel: PackedScene = null
 @export var levelTime: float = 5.0
+@export var isFinalLevel: bool = false
 
 var player: Player = null
 var timerNode: Timer = null
@@ -46,11 +48,15 @@ func _on_deathzone_body_entered(_body: Node2D)-> void:
 
 func _on_exit_body_entered(body: Node2D)-> void:
 	if body is Player:
-		exit.animate()
-		player.active = false
-		win = true
-		await get_tree().create_timer(1.5).timeout
-		get_tree().change_scene_to_packed(nextLevel)
+		if isFinalLevel or nextLevel:
+			exit.animate()
+			player.active = false
+			win = true
+			await get_tree().create_timer(1.5).timeout
+			if isFinalLevel:
+				uiLayer.showWinScreen(true)
+			else:
+				get_tree().change_scene_to_packed(nextLevel)
 
 func _on_trap_touched_player()-> void:
 	resetPlayer()
