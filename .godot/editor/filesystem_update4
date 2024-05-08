@@ -7,3 +7,4 @@ res://Scripts/JumpPad.gd
 res://Scenes/saw.tscn
 res://Scripts/Trap.gd
 res://Scenes/spike_ball.tscn
+res://Scenes/tile_map.tscn

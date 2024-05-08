@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddy30tlfayt3b"]
+[gd_scene load_steps=10 format=3 uid="uid://ddy30tlfayt3b"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lrdpd"]
 [ext_resource type="PackedScene" uid="uid://d3b17tlsdh8l7" path="res://Scenes/player.tscn" id="2_y6yk7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmxiqe7sl24g6" path="res://Scenes/jump_pad.tscn" id="4_q0dc7"]
 [ext_resource type="PackedScene" uid="uid://b85bqn5ia052i" path="res://Scenes/saw.tscn" id="5_5tpyc"]
 [ext_resource type="PackedScene" uid="uid://dgqehoujmjbg4" path="res://Scenes/spike_ball.tscn" id="6_y42n1"]
+[ext_resource type="PackedScene" uid="uid://cddecsyahd6qh" path="res://Scenes/tile_map.tscn" id="7_cbyty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m35yq"]
 size = Vector2(116, 20)
@@ -44,10 +45,10 @@ position = Vector2(244, 185)
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_q0dc7")]
-position = Vector2(238, 234)
+position = Vector2(243, 225)
 
 [node name="JumpPad2" parent="Objects" instance=ExtResource("4_q0dc7")]
-position = Vector2(201, 234)
+position = Vector2(206, 225)
 jumpForce = 350.0
 
 [node name="Traps" type="Node2D" parent="."]
@@ -60,5 +61,7 @@ position = Vector2(327, 135)
 
 [node name="SpikeBall" parent="Traps" instance=ExtResource("6_y42n1")]
 position = Vector2(114, 200)
+
+[node name="TileMap" parent="." instance=ExtResource("7_cbyty")]
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
