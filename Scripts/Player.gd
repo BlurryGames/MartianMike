@@ -22,6 +22,22 @@ func _physics_process(delta: float)-> void:
 		velocity.y = -jumpForce
 	
 	var direction: float = Input.get_axis("MoveLeft", "MoveRight")
-	velocity.x = direction * speed
+	if direction != 0.0:
+		animatedSprite.flip_h = direction < 0.0
 	
+	velocity.x = direction * speed
 	move_and_slide()
+	
+	updateAnimations(direction)
+
+func updateAnimations(direction: float)-> void:
+	if is_on_floor():
+		if direction == 0.0:
+			animatedSprite.play("Idle")
+		else:
+			animatedSprite.play("Run")
+	else:
+		if velocity.y < 0.0:
+			animatedSprite.play("Jump")
+		else:
+			animatedSprite.play("Fall")
