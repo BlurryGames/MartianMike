@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://deqtarbc0eqxp"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_bkiv2"]
+[ext_resource type="PackedScene" uid="uid://d3b17tlsdh8l7" path="res://Scenes/player.tscn" id="2_lokik"]
+[ext_resource type="PackedScene" uid="uid://ddy30tlfayt3b" path="res://Scenes/level.tscn" id="2_rkvi7"]
+[ext_resource type="PackedScene" uid="uid://cddecsyahd6qh" path="res://Scenes/tile_map.tscn" id="3_p8fis"]
+[ext_resource type="PackedScene" uid="uid://csj61rihj8kvk" path="res://Scenes/bg.tscn" id="4_sdrh4"]
+[ext_resource type="Texture2D" uid="uid://i6n5ccmt264s" path="res://Assets/textures/bg/Brown.png" id="5_2us80"]
+[ext_resource type="PackedScene" uid="uid://deju21t67qvm4" path="res://Scenes/exit.tscn" id="5_jnhg0"]
+[ext_resource type="PackedScene" uid="uid://c567srdogw7yh" path="res://Scenes/start.tscn" id="6_01e5w"]
+[ext_resource type="PackedScene" uid="uid://d1sn2y4ap1ewn" path="res://Scenes/deathzone.tscn" id="7_ysswd"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_bkiv2")
+nextLevel = ExtResource("2_rkvi7")
+
+[node name="TileMap" parent="." instance=ExtResource("3_p8fis")]
+
+[node name="Bg" parent="." instance=ExtResource("4_sdrh4")]
+bgTexture = ExtResource("5_2us80")
+
+[node name="Exit" parent="." instance=ExtResource("5_jnhg0")]
+position = Vector2(291, 224)
+
+[node name="Start" parent="." instance=ExtResource("6_01e5w")]
+position = Vector2(169, 224)
+
+[node name="Player" parent="." instance=ExtResource("2_lokik")]
+
+[node name="Deathzone" parent="." instance=ExtResource("7_ysswd")]

@@ -2,6 +2,7 @@ class_name Level extends Node2D
 
 @onready var start: Start = $Start
 @onready var exit: Exit = $Exit
+@onready var deathzone: Area2D = $Deathzone
 
 @export var nextLevel: PackedScene = null
 
@@ -17,6 +18,7 @@ func _ready()-> void:
 		t.touchedPlayer.connect(_on_trap_touched_player)
 	
 	exit.body_entered.connect(_on_exit_body_entered)
+	deathzone.body_entered.connect(_on_deathzone_body_entered)
 
 func _process(_delta: float)-> void:
 	if Input.is_action_just_pressed("Quit"):
