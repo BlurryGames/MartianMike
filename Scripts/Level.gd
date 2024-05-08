@@ -1,6 +1,7 @@
 class_name Level extends Node2D
 
 @onready var startPosition: Marker2D = $StartPosition
+@onready var player: Player = $Player
 
 func _process(_delta: float)-> void:
 	if Input.is_action_just_pressed("Quit"):
@@ -9,5 +10,11 @@ func _process(_delta: float)-> void:
 		get_tree().reload_current_scene()
 
 func _on_deathzone_body_entered(body: Node2D)-> void:
-	body.velocity = Vector2.ZERO
-	body.global_position = startPosition.global_position
+	resetPlayer()
+
+func _on_trap_touched_player()-> void:
+	resetPlayer()
+
+func resetPlayer()-> void:
+	player.velocity = Vector2.ZERO
+	player.global_position = startPosition.global_position

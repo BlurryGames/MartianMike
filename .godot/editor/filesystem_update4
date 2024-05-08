@@ -4,3 +4,6 @@ res://Scenes/player.tscn
 res://Scripts/Player.gd
 res://Scenes/jump_pad.tscn
 res://Scripts/JumpPad.gd
+res://Scenes/saw.tscn
+res://Scripts/Trap.gd
+res://Scenes/spike_ball.tscn
