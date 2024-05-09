@@ -31,6 +31,7 @@ func _physics_process(delta: float)-> void:
 	updateAnimations(direction)
 
 func jump(force: float)-> void:
+	AudioPlayer.playSFX("jump")
 	velocity.y = -force
 
 func updateAnimations(direction: float)-> void:

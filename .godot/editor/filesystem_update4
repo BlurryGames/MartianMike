@@ -15,3 +15,6 @@ res://Scenes/hud.tscn
 res://Scenes/win_screen.tscn
 res://Scenes/start_menu.tscn
 res://Scenes/audio_player.tscn
+res://Scripts/AudioPlayer.gd
+res://Scripts/Player.gd
+res://Scripts/Level.gd

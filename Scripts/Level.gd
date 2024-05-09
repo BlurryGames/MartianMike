@@ -44,6 +44,7 @@ func _process(_delta: float)-> void:
 		get_tree().reload_current_scene()
 
 func _on_deathzone_body_entered(_body: Node2D)-> void:
+	AudioPlayer.playSFX("hurt")
 	resetPlayer()
 
 func _on_exit_body_entered(body: Node2D)-> void:
@@ -59,12 +60,14 @@ func _on_exit_body_entered(body: Node2D)-> void:
 				get_tree().change_scene_to_packed(nextLevel)
 
 func _on_trap_touched_player()-> void:
+	AudioPlayer.playSFX("hurt")
 	resetPlayer()
 
 func _on_level_timer_timeout()-> void:
 	if not win:
 		timeLeft -= 1
 		if timeLeft < 0.0:
+			AudioPlayer.playSFX("hurt")
 			resetPlayer()
 			timeLeft = levelTime
 		hud.setTimeLabel(timeLeft)
